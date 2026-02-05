@@ -1,6 +1,10 @@
 using System;
 using System.Net.NetworkInformation;
+using AuthService.Application.Interfaces;
+using AuthService.Application.Services;
+using AuthService.Domain.Interfaces;
 using AuthService.Persistence.Data;
+using AuthService.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace AuthService.Api.Extensions;
@@ -13,6 +17,17 @@ public static class ServiceCollectionExtensions
             options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"))
                 .UseSnakeCaseNamingConvention());
 
+        services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IRoleRepository, RoleRepository>();
+        services.AddScoped<IAuthService, Application.Services.AuthService>();
+        services.AddScoped<IUserManagementService, UserManagementService>();
+        services.AddScoped<IPasswordHashService, PasswordHashService>();
+        services.AddScoped<IJwtTokenService, JwtTokenService>();
+        services.AddScoped<IEmailService, EmailService>();
+        services.AddScoped<ICloudinaryService, CloudinaryService>();
+        
+        services.AddHealthChecks();
+        
         return services;
     }
 

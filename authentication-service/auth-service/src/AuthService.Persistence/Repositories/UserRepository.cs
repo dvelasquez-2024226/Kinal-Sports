@@ -65,7 +65,7 @@ public class UserRepository(ApplicationDbContext context) : IUserRepository
                 .ThenInclude(ur => ur.Role)
             .FirstOrDefaultAsync(u => u.UserPasswordReset != null &&
                                     u.UserPasswordReset.PasswordResetToken == token &&
-                                    u.UserPasswordReset.PasswordResetTokemExpiry > DateTime.UtcNow);
+                                    u.UserPasswordReset.PasswordResetTokenExpiry > DateTime.UtcNow);
     }
 
     public async Task<User> CreateAsync(User user)
