@@ -1,4 +1,5 @@
 using System;
+using System.Net.NetworkInformation;
 using AuthService.Persistence.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,6 +13,13 @@ public static class ServiceCollectionExtensions
             options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"))
                 .UseSnakeCaseNamingConvention());
 
+        return services;
+    }
+
+    public static IServiceCollection AddApiDocumentation(this IServiceCollection services)
+    {
+        services.AddEndpointsApiExplorer();
+        services.AddSwaggerGen();
         return services;
     }
 }

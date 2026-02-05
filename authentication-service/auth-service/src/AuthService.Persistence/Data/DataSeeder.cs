@@ -46,7 +46,7 @@ public static class DataSeeder
                 {
                     Id = userId,
                     Name = "Lomito",
-                    Surename = "God",
+                    Surname = "God",
                     Username = "Admin",
                     Email = "ksadmin@loacl.com",
                     Password = passwordHasher.HashPassword("Kinal2026!"),
