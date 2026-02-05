@@ -86,11 +86,11 @@ namespace AuthService.Persistence.Migrations
                         .HasDefaultValue(false)
                         .HasColumnName("status");
 
-                    b.Property<string>("Surename")
+                    b.Property<string>("Surname")
                         .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("character varying(25)")
-                        .HasColumnName("surename");
+                        .HasColumnName("surname");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone")
@@ -163,14 +163,14 @@ namespace AuthService.Persistence.Migrations
                         .HasColumnType("character varying(16)")
                         .HasColumnName("id");
 
-                    b.Property<DateTime?>("PasswordResetTokemExpiry")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("password_reset_tokem_expiry");
-
                     b.Property<string>("PasswordResetToken")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)")
                         .HasColumnName("password_reset_token");
+
+                    b.Property<DateTime?>("PasswordResetTokenExpiry")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("password_reset_token_expiry");
 
                     b.Property<string>("UserId")
                         .IsRequired()

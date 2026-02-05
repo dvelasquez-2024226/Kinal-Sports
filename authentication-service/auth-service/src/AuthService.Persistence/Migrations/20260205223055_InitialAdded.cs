@@ -31,7 +31,7 @@ namespace AuthService.Persistence.Migrations
                 {
                     id = table.Column<string>(type: "character varying(16)", maxLength: 16, nullable: false),
                     name = table.Column<string>(type: "character varying(25)", maxLength: 25, nullable: false),
-                    surename = table.Column<string>(type: "character varying(25)", maxLength: 25, nullable: false),
+                    surname = table.Column<string>(type: "character varying(25)", maxLength: 25, nullable: false),
                     username = table.Column<string>(type: "character varying(25)", maxLength: 25, nullable: false),
                     email = table.Column<string>(type: "character varying(150)", maxLength: 150, nullable: false),
                     password = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
@@ -72,7 +72,7 @@ namespace AuthService.Persistence.Migrations
                     id = table.Column<string>(type: "character varying(16)", maxLength: 16, nullable: false),
                     user_id = table.Column<string>(type: "character varying(16)", maxLength: 16, nullable: false),
                     password_reset_token = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
-                    password_reset_tokem_expiry = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                    password_reset_token_expiry = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
                 constraints: table =>
                 {
