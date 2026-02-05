@@ -348,3 +348,4 @@ C:\Diego Velasquez 2024226\Kinal Sports\authentication-service\auth-service\src\
 C:\Diego Velasquez 2024226\Kinal Sports\authentication-service\auth-service\src\AuthService.Api\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Diego Velasquez 2024226\Kinal Sports\authentication-service\auth-service\src\AuthService.Api\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\Diego Velasquez 2024226\Kinal Sports\authentication-service\auth-service\src\AuthService.Api\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Diego Velasquez 2024226\Kinal Sports\authentication-service\auth-service\src\AuthService.Api\obj\Debug\net8.0\AuthService.Api.sourcelink.json

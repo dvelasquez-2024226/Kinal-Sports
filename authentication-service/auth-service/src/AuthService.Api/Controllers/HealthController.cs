@@ -7,6 +7,7 @@ namespace AuthService.Api.Controllers;
 [Route("api/v1/[controller]")]
 public class HealthController : ControllerBase
 {
+    [HttpGet]
     public IActionResult GetHealth()
     {
         var response = new
@@ -14,7 +15,7 @@ public class HealthController : ControllerBase
             status = "Healthy",
             timestamp = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffz"),
             service = "Kinal Sports AuthService"
-        }
+        };
         return Ok(response);
     }
 }
