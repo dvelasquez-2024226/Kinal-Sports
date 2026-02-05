@@ -75,6 +75,7 @@ public class AuthService(
         var userProfileId = UuidGenerator.GenerateUserId();
         var userEmailId = UuidGenerator.GenerateUserId();
         var userRoleId = UuidGenerator.GenerateUserId();
+        var UserPasswordResetId = UuidGenerator.GenerateUserId();
 
         // Obtener el rol por defecto (USER_ROLE) ya seedado en DB
         var defaultRole = await roleRepository.GetByNameAsync(RoleConstants.USER_ROLE);
@@ -115,7 +116,14 @@ public class AuthService(
                     UserId = userId,
                     RoleId = defaultRole.Id
                 }
-            ]
+            ],
+            UserPasswordReset = new UserPasswordReset
+            {
+                Id = UserPasswordResetId,
+                UserId = userId,
+                PasswordResetToken = null,
+                PasswordResetTokenExpiry = null
+            }
         };
 
         // Guardar usuario y entidades relacionadas
