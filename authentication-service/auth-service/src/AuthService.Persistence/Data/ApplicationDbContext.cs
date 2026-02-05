@@ -73,7 +73,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
             entity.Property(e => e.Name)
                 .IsRequired()
                 .HasMaxLength(25);
-            entity.Property(e => e.Surename)
+            entity.Property(e => e.Surname)
                 .IsRequired()
                 .HasMaxLength(25);
             entity.Property(e => e.Username)

@@ -23,7 +23,7 @@ public class RoleRepository(ApplicationDbContext context) : IRoleRepository
         return await context.Roles.FirstOrDefaultAsync(r => r.Name == roleName);
     }
 
-    public async Task<IReadOnlyList<string>> GetUserRoleNameAsync(string userId)
+    public async Task<IReadOnlyList<string>> GetUserRoleNamesAsync(string userId)
     {
         var roles = await context.UserRoles
             .Include(ur => ur.Role)

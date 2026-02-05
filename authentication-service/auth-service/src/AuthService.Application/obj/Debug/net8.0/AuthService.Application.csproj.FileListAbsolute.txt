@@ -28,3 +28,4 @@ C:\Users\diego\Desktop\Tareas\Taller\Kinal Sports\authentication-service\auth-se
 C:\Users\diego\Desktop\Tareas\Taller\Kinal Sports\authentication-service\auth-service\src\AuthService.Application\obj\Debug\net8.0\refint\AuthService.Application.dll
 C:\Users\diego\Desktop\Tareas\Taller\Kinal Sports\authentication-service\auth-service\src\AuthService.Application\obj\Debug\net8.0\AuthService.Application.pdb
 C:\Users\diego\Desktop\Tareas\Taller\Kinal Sports\authentication-service\auth-service\src\AuthService.Application\obj\Debug\net8.0\ref\AuthService.Application.dll
+C:\Diego Velasquez 2024226\Kinal Sports\authentication-service\auth-service\src\AuthService.Application\obj\Debug\net8.0\AuthService.Application.sourcelink.json

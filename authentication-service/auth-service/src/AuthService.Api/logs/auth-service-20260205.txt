@@ -80,3 +80,10 @@ Npgsql.PostgresException (0x80004005): 28P01: password authentication failed for
 [2026-02-05 15:58:31 INF] API de AuthService está ejecutándose en http://localhost:5222. Endpoint de salud: http://localhost:5222/health {"SourceContext":"Program"}
 [2026-02-05 15:58:36 WRN] Failed to determine the https port for redirect. {"EventId":{"Id":3,"Name":"FailedToDeterminePort"},"SourceContext":"Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware","RequestId":"0HNJ506R7DM0D:00000001","RequestPath":"/api/v1/health","ConnectionId":"0HNJ506R7DM0D"}
 [2026-02-05 15:58:36 INF] HTTP GET /api/v1/health responded 200 in 73.9719 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNJ506R7DM0D:00000001","ConnectionId":"0HNJ506R7DM0D"}
+[2026-02-05 16:09:30 INF] Verificando conexión a la base de datos... {"SourceContext":"Program"}
+[2026-02-05 16:09:30 INF] Base de datos lista. Ejecutando datos semilla... {"SourceContext":"Program"}
+[2026-02-05 16:09:30 INF] Inicialización de base de datos completada exitosamente {"SourceContext":"Program"}
+[2026-02-05 16:09:30 INF] API de AuthService está ejecutándose en http://localhost:5222. Endpoint de salud: http://localhost:5222/health {"SourceContext":"Program"}
+[2026-02-05 16:13:46 WRN] Failed to determine the https port for redirect. {"EventId":{"Id":3,"Name":"FailedToDeterminePort"},"SourceContext":"Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware","RequestId":"0HNJ50FACP39D:00000001","RequestPath":"/api/v1/login","ConnectionId":"0HNJ50FACP39D"}
+[2026-02-05 16:13:46 INF] HTTP POST /api/v1/login responded 404 in 21.5365 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNJ50FACP39D:00000001","ConnectionId":"0HNJ50FACP39D"}
+[2026-02-05 16:14:41 INF] HTTP POST /api/v1/login responded 404 in 2.8963 ms {"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HNJ50FACP39D:00000002","ConnectionId":"0HNJ50FACP39D"}
