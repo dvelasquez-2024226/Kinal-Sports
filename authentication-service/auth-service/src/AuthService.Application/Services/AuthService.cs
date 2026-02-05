@@ -119,7 +119,7 @@ public class AuthService(
         };
 
         // Guardar usuario y entidades relacionadas
-        var createdUser = await userRepository.CreateAsync(user);
+        var createdUser = await userRepository.CreateUserAsync(user);
 
         logger.LogUserRegistered(createdUser.Username);
 
@@ -249,7 +249,7 @@ public class AuthService(
         user.UserEmail.EmailVerificationToken = null;
         user.UserEmail.EmailVerificationTokenExpiry = null;
 
-        await userRepository.UpdateAsync(user);
+        await userRepository.UpdateUsernameAsync(user);
 
         // Enviar email de bienvenida
         try
@@ -303,7 +303,7 @@ public class AuthService(
         user.UserEmail.EmailVerificationToken = newToken;
         user.UserEmail.EmailVerificationTokenExpiry = DateTime.UtcNow.AddHours(24);
 
-        await userRepository.UpdateAsync(user);
+        await userRepository.UpdateUsernameAsync(user);
 
         // Enviar email
         try
@@ -360,7 +360,7 @@ public class AuthService(
             user.UserPasswordReset.PasswordResetTokenExpiry = DateTime.UtcNow.AddHours(1); // 1 hora para resetear
         }
 
-        await userRepository.UpdateAsync(user);
+        await userRepository.UpdateUsernameAsync(user);
 
         // Enviar email
         try
@@ -399,7 +399,7 @@ public class AuthService(
         user.UserPasswordReset.PasswordResetToken = null;
         user.UserPasswordReset.PasswordResetTokenExpiry = null;
 
-        await userRepository.UpdateAsync(user);
+        await userRepository.UpdateUsernameAsync(user);
 
         logger.LogInformation("Password reset successfully for user {Username}", user.Username);
 

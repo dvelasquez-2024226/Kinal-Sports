@@ -12,7 +12,7 @@ public interface IUserRepository
     Task<User?> GetByUsernameAsync (string username);
     Task<User?> GetByEmailVerificationTokenAsync (string token);
     Task<User?> GetByPasswordResetTokenAsync (string token);
-    Task<bool> ExistsByEmialAsync (string email);
+    Task<bool> ExistsByEmailAsync (string email);
     Task<bool> ExistsByUsernameAsync (string username);
     Task<User> UpdateUsernameAsync (User user);
     Task<bool> DeletUserAsync (string id);

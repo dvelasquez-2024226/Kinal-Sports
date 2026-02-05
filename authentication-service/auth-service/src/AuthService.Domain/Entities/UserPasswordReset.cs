@@ -15,7 +15,7 @@ public class UserPasswordReset
 
     public string? PasswordResetToken {get; set;}
 
-    public DateTime? PasswordResetTokemExpiry {get; set;}
+    public DateTime? PasswordResetTokenExpiry {get; set;}
 
     public User User {get; set;} = null!;
 }
