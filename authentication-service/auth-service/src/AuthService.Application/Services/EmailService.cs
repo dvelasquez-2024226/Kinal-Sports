@@ -105,6 +105,13 @@ public class EmailService(IConfiguration configuration, ILogger<EmailService> lo
 
             try
             {
+                // Configurar validación de certificados SSL
+                var ignoreCertErrors = bool.Parse(smtpSettings["IgnoreCertificateErrors"] ?? "false");
+                if (ignoreCertErrors)
+                {
+                    logger.LogWarning("Validación de certificados SSL deshabilitada. Solo usar en desarrollo.");
+                    client.ServerCertificateValidationCallback = (s, c, h, e) => true;
+                }
                 // Verificar configuración de SSL implícito
                 var useImplicitSsl = bool.Parse(smtpSettings["UseImplicitSsl"] ?? "false");
 
