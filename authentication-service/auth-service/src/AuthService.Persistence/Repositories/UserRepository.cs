@@ -68,21 +68,21 @@ public class UserRepository(ApplicationDbContext context) : IUserRepository
                                     u.UserPasswordReset.PasswordResetTokenExpiry > DateTime.UtcNow);
     }
 
-    public async Task<User> CreateAsync(User user)
+    public async Task<User> CreateUserAsync(User user)
     {
         context.Users.Add(user);
         await context.SaveChangesAsync();
         return await GetByIdAsync(user.Id);
     }
 
-    public async Task<User> UpdateAsync(User user)
+    public async Task<User> UpdateUserAsync(User user)
     {
         // Entity is already tracked from GetByIdAsync, just save changes
         await context.SaveChangesAsync();
         return await GetByIdAsync(user.Id);
     }
 
-    public async Task<bool> DeleteAsync(string id)
+    public async Task<bool> DeleteUserAsync(string id)
     {
         var user = await GetByIdAsync(id);
         context.Users.Remove(user);
@@ -124,25 +124,4 @@ public class UserRepository(ApplicationDbContext context) : IUserRepository
         context.UserRoles.Add(newUserRole);
         await context.SaveChangesAsync();
     }
-
-    public Task<User> CreateUserAsync(User user)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<bool> ExistsByEmialAsync(string email)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<User> UpdateUsernameAsync(User user)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<bool> DeletUserAsync(string id)
-    {
-        throw new NotImplementedException();
-    }
-
 }
