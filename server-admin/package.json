@@ -1,13 +1,13 @@
 {
   "name": "server-admin",
   "version": "1.0.0",
-  "description": "",
+  "description": "Servidor ed administracion para Kinal Sports",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Diego Velasquez & Faze Code",
   "license": "ISC",
   "packageManager": "pnpm@10.29.2"
 }
