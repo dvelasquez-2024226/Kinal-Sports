@@ -1,6 +1,6 @@
-import { cloudinary } from "./file-uploaders";
+import { cloudinary } from "./file-uploaders.js";
 
-export const cleanupUploaderFileOnFinish = (req, res, next) => {
+export const cleanupUploadedFileOnFinish = (req, res, next) => {
     if (req.file) {
         res.on('finish', async () => {
             try {

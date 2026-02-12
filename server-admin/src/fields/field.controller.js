@@ -1,4 +1,4 @@
-import { createFieldRecord } from "./field.service";
+import { createFieldRecord } from "./field.service.js";
 
 export const createField = async (req, res) => {
     try{

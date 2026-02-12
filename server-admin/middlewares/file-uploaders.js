@@ -67,4 +67,4 @@ export const upLoadTeamImage = createCloudinaryUploader(
     'kinal_sports_in6av/teams'
 );
 
-    export { cloudinary };
+export { cloudinary };
