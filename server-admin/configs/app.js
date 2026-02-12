@@ -5,8 +5,8 @@ import cors from 'cors';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import { dbConnection } from './db.js';
-import { corsOptions } from '/cors.configuration.js';
-import { helmetOptions } from '/helmet.configuration.js';
+import { corsOptions } from './cors.configuration.js';
+import { helmetOptions } from './helmet.configuration.js'
 import { requestLimit } from './rateLimit.configuration.js';
 
 const BASE_PATH = '/kinalSports/v1';
