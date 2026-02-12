@@ -8,6 +8,7 @@ import { dbConnection } from './db.js';
 import { corsOptions } from './cors.configuration.js';
 import { helmetOptions } from './helmet.configuration.js'
 import { requestLimit } from './rateLimit.configuration.js';
+import { errorHandler } from '../middlewares/handle-errors.js';
 
 const BASE_PATH = '/kinalSports/v1';
 
@@ -17,6 +18,7 @@ const middlewares = (app) =>{
     app.use(cors(corsOptions));
     app.use(morgan('dev'));
     app.use(helmet(helmetOptions));
+    app.use(requestLimit);
 };
 
 const routes = (app) => {
@@ -44,6 +46,7 @@ export const initServer = async() => {
         await dbConnection();
         middlewares(app);
         routes(app);
+        app.use(errorHandler);
 
         app.listen(PORT, () => {
             console.log(`Kinal Sports admin server running on port ${PORT}`)
