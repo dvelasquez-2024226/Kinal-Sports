@@ -20,7 +20,7 @@ const routes = (app) => {
     app.get(`${BASE_PATH}/health`, (req, res) => {
         res.status(200).json({
             status: 'healthy',
-            status: 'Kinal Sports Admin Server'
+            service: 'Kinal Sports Admin Server'
         })
     })
 
