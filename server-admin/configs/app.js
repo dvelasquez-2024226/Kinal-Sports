@@ -17,10 +17,17 @@ const middlewares = (app) =>{
 };
 
 const routes = (app) => {
-    app.use(`${BASE_PATH}/health`, (req, res) => {
+    app.get(`${BASE_PATH}/health`, (req, res) => {
         res.status(200).json({
             status: 'healthy',
             status: 'Kinal Sports Admin Server'
+        })
+    })
+
+    app.use((req, res) => {
+        res.status(404).json({
+            succes: false,
+            message: 'Ruta no existe en el servidor'
         })
     })
 }
@@ -29,14 +36,15 @@ export const initServer = async() => {
     const app =  express();
     const PORT = process.env.PORT;
     app.set('trust proxy', 1);
-    routes(app);
 
     try{
-        middlewares(app);
         await dbConnection();
+        middlewares(app);
+        routes(app);
 
         app.listen(PORT, () => {
             console.log(`Kinal Sports admin server running on port ${PORT}`)
+            console.log(`Health check endpoint: http://localhost:${PORT}${BASE_PATH}/health`)
         })
     }catch(err){
         console.error(`Error al inicia el servidor: ${err.message}`);
