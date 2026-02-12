@@ -5,15 +5,18 @@ import cors from 'cors';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import { dbConnection } from './db.js';
+import { corsOptions } from '/cors.configuration.js';
+import { helmetOptions } from '/helmet.configuration.js';
+import { requestLimit } from './rateLimit.configuration.js';
 
 const BASE_PATH = '/kinalSports/v1';
 
 const middlewares = (app) =>{
     app.use(express.urlencoded({extended: false, limit: '10mb'}));
     app.use(express.json({limit: '10mb'}));
-    app.use(cors());
+    app.use(cors(corsOptions));
     app.use(morgan('dev'));
-    app.use(helmet());
+    app.use(helmet(helmetOptions));
 };
 
 const routes = (app) => {
