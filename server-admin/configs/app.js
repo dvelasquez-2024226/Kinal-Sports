@@ -9,6 +9,7 @@ import { corsOptions } from './cors.configuration.js';
 import { helmetOptions } from './helmet.configuration.js'
 import { requestLimit } from './rateLimit.configuration.js';
 import { errorHandler } from '../middlewares/handle-errors.js';
+import fieldRoutes from '../src/fields/field.routes.js';
 
 const BASE_PATH = '/kinalSports/v1';
 
@@ -22,6 +23,7 @@ const middlewares = (app) =>{
 };
 
 const routes = (app) => {
+    app.use(`${BASE_PATH}/fields`, fieldRoutes);
     app.get(`${BASE_PATH}/health`, (req, res) => {
         res.status(200).json({
             status: 'healthy',
