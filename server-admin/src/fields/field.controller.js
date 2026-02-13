@@ -1,4 +1,5 @@
 import { createFieldRecord } from "./field.service.js";
+import { fetchFields } from "./field.service.js";
 
 export const createField = async (req, res) => {
     try{
@@ -12,10 +13,29 @@ export const createField = async (req, res) => {
             data: field
         });
     }catch(err){
-        res.status(400).json({
+        res.status(500).json({
             success: false,
             message: `Error al crear la cancha`,
             error: err.message
         })
+    }
+}
+
+export const getFields = async (req, res) => {
+    try{
+        const { page = 1, limit = 10, isActive = true } = req.query;
+        const { fields, pagination } = await fetchFields({ page, limit, isActive });
+        res.status(200).json({
+            success: true,
+            message: `Canchas listadas exitosamente`,
+            data: fields,
+            pagination
+        });
+    }catch(err){
+        res.status(500).json({
+            success: false,
+            message: `Error al listar las canchas registradas`,
+            error: err.message
+        })  
     }
 }

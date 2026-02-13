@@ -1,9 +1,8 @@
 import Field from './field.model.js';
-import { cloudinary } from '../../middlewares/file-uploaders.js';
 
 export const createFieldRecord = async ({fieldData, file}) => {
     const data = {...fieldData};
-
+    
     if(file){
         const filename = file.filename;
         const match = filename.match(/fields\/.+$/);
