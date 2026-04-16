@@ -51,7 +51,7 @@ export const useAuthStore = create(
                 try{
                     set({loading: true, error: null})
                     const {data} = await loginResquest({emailOrUsername, password})
-                    const role = data?.user?.role;
+                    const role = data?.userDetails?.user?.role;
                     if(role !== "ADMIN_ROLE"){
                         const message = "No tienes permisos para acceder a esta aplicación";
                         set({
@@ -81,6 +81,6 @@ export const useAuthStore = create(
                 }
             }
         }),
-        {name: "auth-storage"},
+        {name: "auth-KS-IN6AV"},
     )
 )

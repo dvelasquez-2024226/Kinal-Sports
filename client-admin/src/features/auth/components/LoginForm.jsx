@@ -1,13 +1,29 @@
 import { useForm } from "react-hook-form"
+import { useAuthStore } from "../store/authStore.js"
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 export const LoginForm = ({onForgot}) => {
+  const navigate = useNavigate();
+  const login = useAuthStore((state) => state.login);
+  const loading = useAuthStore((state) => state.loading);
+  const error = useAuthStore((state) => state.error);
   const {
     register,
-    // hancdleSubmit,
+    handleSubmit,
     formState: { errors }
   } = useForm();
+
+const onSubmit = async (data) =>{
+  const res = await login(data);
+  if(res.succes){
+    navigate("/dashboard");
+    toast.success("Bienvenido a Kinal Sports Admin", {duration: 2000})
+  }
+}
+
   return (
-    <form className="space-y-5">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
       <div>
         <label htmlFor="emailOrUsername" className="block text-sm font-medium text-gray-800 mb-1.5">
           Email o Username
@@ -47,7 +63,10 @@ export const LoginForm = ({onForgot}) => {
           <p className="text-red-600 text-xs mt-1">{errors.password.message}</p>
         )}
       </div>
-      <button type="submit" className="w-full bg-main-blue hover:opacity-90 text-white font-medium py-2.5 px-4 rounded-lg transition-colors duration-200 text-sm">
+      {error && (
+        <p className="text-red-600 text-sm text-center">{error}</p>
+      )}
+      <button type="submit" disabled={loading} className="w-full bg-main-blue hover:opacity-90 text-white font-medium py-2.5 px-4 rounded-lg transition-colors duration-200 text-sm">
         Iniciar sesión
       </button>
       <p className="text-center text-sm">
