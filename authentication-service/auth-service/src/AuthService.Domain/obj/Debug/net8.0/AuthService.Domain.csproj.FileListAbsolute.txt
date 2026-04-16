@@ -1,23 +1,35 @@
-C:\Users\diego\Desktop\Tareas\Taller\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\bin\Debug\net8.0\AuthService.Domain.deps.json
-C:\Users\diego\Desktop\Tareas\Taller\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\bin\Debug\net8.0\AuthService.Domain.dll
-C:\Users\diego\Desktop\Tareas\Taller\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\bin\Debug\net8.0\AuthService.Domain.pdb
-C:\Users\diego\Desktop\Tareas\Taller\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\obj\Debug\net8.0\AuthService.Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\diego\Desktop\Tareas\Taller\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\obj\Debug\net8.0\AuthService.Domain.AssemblyInfoInputs.cache
-C:\Users\diego\Desktop\Tareas\Taller\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\obj\Debug\net8.0\AuthService.Domain.AssemblyInfo.cs
-C:\Users\diego\Desktop\Tareas\Taller\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\obj\Debug\net8.0\AuthService.Domain.csproj.CoreCompileInputs.cache
-C:\Users\diego\Desktop\Tareas\Taller\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\obj\Debug\net8.0\AuthService.Domain.dll
-C:\Users\diego\Desktop\Tareas\Taller\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\obj\Debug\net8.0\refint\AuthService.Domain.dll
-C:\Users\diego\Desktop\Tareas\Taller\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\obj\Debug\net8.0\AuthService.Domain.pdb
-C:\Users\diego\Desktop\Tareas\Taller\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\obj\Debug\net8.0\ref\AuthService.Domain.dll
-C:\Diego Velasquez 2024226\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\bin\Debug\net8.0\AuthService.Domain.deps.json
-C:\Diego Velasquez 2024226\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\bin\Debug\net8.0\AuthService.Domain.dll
-C:\Diego Velasquez 2024226\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\bin\Debug\net8.0\AuthService.Domain.pdb
-C:\Diego Velasquez 2024226\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\obj\Debug\net8.0\AuthService.Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Diego Velasquez 2024226\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\obj\Debug\net8.0\AuthService.Domain.AssemblyInfoInputs.cache
-C:\Diego Velasquez 2024226\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\obj\Debug\net8.0\AuthService.Domain.AssemblyInfo.cs
-C:\Diego Velasquez 2024226\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\obj\Debug\net8.0\AuthService.Domain.csproj.CoreCompileInputs.cache
-C:\Diego Velasquez 2024226\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\obj\Debug\net8.0\AuthService.Domain.sourcelink.json
-C:\Diego Velasquez 2024226\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\obj\Debug\net8.0\AuthService.Domain.dll
-C:\Diego Velasquez 2024226\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\obj\Debug\net8.0\refint\AuthService.Domain.dll
-C:\Diego Velasquez 2024226\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\obj\Debug\net8.0\AuthService.Domain.pdb
-C:\Diego Velasquez 2024226\Kinal Sports\authentication-service\auth-service\src\AuthService.Domain\obj\Debug\net8.0\ref\AuthService.Domain.dll
+C:/Users/diego/Desktop/Tareas/Taller/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/bin/Debug/net8.0/AuthService.Domain.deps.json
+C:/Users/diego/Desktop/Tareas/Taller/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/bin/Debug/net8.0/AuthService.Domain.dll
+C:/Users/diego/Desktop/Tareas/Taller/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/bin/Debug/net8.0/AuthService.Domain.pdb
+C:/Users/diego/Desktop/Tareas/Taller/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/AuthService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/diego/Desktop/Tareas/Taller/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/AuthService.Domain.AssemblyInfoInputs.cache
+C:/Users/diego/Desktop/Tareas/Taller/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/AuthService.Domain.AssemblyInfo.cs
+C:/Users/diego/Desktop/Tareas/Taller/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/AuthService.Domain.csproj.CoreCompileInputs.cache
+C:/Users/diego/Desktop/Tareas/Taller/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/AuthService.Domain.dll
+C:/Users/diego/Desktop/Tareas/Taller/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/refint/AuthService.Domain.dll
+C:/Users/diego/Desktop/Tareas/Taller/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/AuthService.Domain.pdb
+C:/Users/diego/Desktop/Tareas/Taller/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/ref/AuthService.Domain.dll
+C:/Diego Velasquez 2024226/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/bin/Debug/net8.0/AuthService.Domain.deps.json
+C:/Diego Velasquez 2024226/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/bin/Debug/net8.0/AuthService.Domain.dll
+C:/Diego Velasquez 2024226/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/bin/Debug/net8.0/AuthService.Domain.pdb
+C:/Diego Velasquez 2024226/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/AuthService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:/Diego Velasquez 2024226/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/AuthService.Domain.AssemblyInfoInputs.cache
+C:/Diego Velasquez 2024226/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/AuthService.Domain.AssemblyInfo.cs
+C:/Diego Velasquez 2024226/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/AuthService.Domain.csproj.CoreCompileInputs.cache
+C:/Diego Velasquez 2024226/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/AuthService.Domain.sourcelink.json
+C:/Diego Velasquez 2024226/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/AuthService.Domain.dll
+C:/Diego Velasquez 2024226/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/refint/AuthService.Domain.dll
+C:/Diego Velasquez 2024226/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/AuthService.Domain.pdb
+C:/Diego Velasquez 2024226/Kinal Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/ref/AuthService.Domain.dll
+/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Domain/bin/Debug/net8.0/AuthService.Domain.deps.json
+/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Domain/bin/Debug/net8.0/AuthService.Domain.dll
+/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Domain/bin/Debug/net8.0/AuthService.Domain.pdb
+/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/AuthService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/AuthService.Domain.AssemblyInfoInputs.cache
+/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/AuthService.Domain.AssemblyInfo.cs
+/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/AuthService.Domain.csproj.CoreCompileInputs.cache
+/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/AuthService.Domain.sourcelink.json
+/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/AuthService.Domain.dll
+/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/refint/AuthService.Domain.dll
+/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/AuthService.Domain.pdb
+/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Domain/obj/Debug/net8.0/ref/AuthService.Domain.dll

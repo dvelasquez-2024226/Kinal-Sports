@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Api\\AuthService.Api.csproj": {}
+    "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Api/AuthService.Api.csproj": {}
   },
   "projects": {
-    "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Api\\AuthService.Api.csproj": {
+    "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Api/AuthService.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Api\\AuthService.Api.csproj",
+        "projectUniqueName": "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Api/AuthService.Api.csproj",
         "projectName": "AuthService.Api",
-        "projectPath": "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Api\\AuthService.Api.csproj",
-        "packagesPath": "C:\\Users\\Informatica\\.nuget\\packages\\",
-        "outputPath": "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Api\\obj\\",
+        "projectPath": "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Api/AuthService.Api.csproj",
+        "packagesPath": "/Users/diego/.nuget/packages/",
+        "outputPath": "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Informatica\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/diego/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -26,11 +26,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Application\\AuthService.Application.csproj": {
-                "projectPath": "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Application\\AuthService.Application.csproj"
+              "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Application/AuthService.Application.csproj": {
+                "projectPath": "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Application/AuthService.Application.csproj"
               },
-              "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Persistence\\AuthService.Persistence.csproj": {
-                "projectPath": "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Persistence\\AuthService.Persistence.csproj"
+              "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Persistence/AuthService.Persistence.csproj": {
+                "projectPath": "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Persistence/AuthService.Persistence.csproj"
               }
             }
           }
@@ -104,21 +104,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.419/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Application\\AuthService.Application.csproj": {
+    "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Application/AuthService.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Application\\AuthService.Application.csproj",
+        "projectUniqueName": "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Application/AuthService.Application.csproj",
         "projectName": "AuthService.Application",
-        "projectPath": "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Application\\AuthService.Application.csproj",
-        "packagesPath": "C:\\Users\\Informatica\\.nuget\\packages\\",
-        "outputPath": "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Application\\obj\\",
+        "projectPath": "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Application/AuthService.Application.csproj",
+        "packagesPath": "/Users/diego/.nuget/packages/",
+        "outputPath": "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Informatica\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/diego/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -130,8 +130,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Domain\\AuthService.Domain.csproj": {
-                "projectPath": "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Domain\\AuthService.Domain.csproj"
+              "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Domain/AuthService.Domain.csproj": {
+                "projectPath": "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Domain/AuthService.Domain.csproj"
               }
             }
           }
@@ -204,21 +204,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.419/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Domain\\AuthService.Domain.csproj": {
+    "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Domain/AuthService.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Domain\\AuthService.Domain.csproj",
+        "projectUniqueName": "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Domain/AuthService.Domain.csproj",
         "projectName": "AuthService.Domain",
-        "projectPath": "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Domain\\AuthService.Domain.csproj",
-        "packagesPath": "C:\\Users\\Informatica\\.nuget\\packages\\",
-        "outputPath": "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Domain\\obj\\",
+        "projectPath": "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Domain/AuthService.Domain.csproj",
+        "packagesPath": "/Users/diego/.nuget/packages/",
+        "outputPath": "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Informatica\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/diego/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -268,21 +268,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.419/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Persistence\\AuthService.Persistence.csproj": {
+    "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Persistence/AuthService.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Persistence\\AuthService.Persistence.csproj",
+        "projectUniqueName": "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Persistence/AuthService.Persistence.csproj",
         "projectName": "AuthService.Persistence",
-        "projectPath": "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Persistence\\AuthService.Persistence.csproj",
-        "packagesPath": "C:\\Users\\Informatica\\.nuget\\packages\\",
-        "outputPath": "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Persistence\\obj\\",
+        "projectPath": "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Persistence/AuthService.Persistence.csproj",
+        "packagesPath": "/Users/diego/.nuget/packages/",
+        "outputPath": "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Persistence/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Informatica\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/diego/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -294,11 +294,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Application\\AuthService.Application.csproj": {
-                "projectPath": "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Application\\AuthService.Application.csproj"
+              "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Application/AuthService.Application.csproj": {
+                "projectPath": "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Application/AuthService.Application.csproj"
               },
-              "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Domain\\AuthService.Domain.csproj": {
-                "projectPath": "C:\\Diego Velasquez 2024226\\Kinal Sports\\authentication-service\\auth-service\\src\\AuthService.Domain\\AuthService.Domain.csproj"
+              "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Domain/AuthService.Domain.csproj": {
+                "projectPath": "/Users/diego/Tareas/Taller/Kinal-Sports/authentication-service/auth-service/src/AuthService.Domain/AuthService.Domain.csproj"
               }
             }
           }
@@ -355,7 +355,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.419/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
