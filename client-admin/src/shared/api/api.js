@@ -5,7 +5,7 @@ const axiosAuth = axios.create({
     baseURL: import.meta.env.VITE_AUTH_URL,
     timeout: 5000,
     headers: {
-        'Content-Type': 'application/jason'
+        'Content-Type': 'application/json'
     }
 })
 

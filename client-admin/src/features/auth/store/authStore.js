@@ -1,38 +1,38 @@
-    import { create } from "zustand"
-import { persist } from "zustand/middleware"
-import { login as loginResquest } from "../../../shared/api"
-import { showError } from "../../../shared/utils/toast.js" 
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+import { login as loginRequest } from "../../../shared/api";
+import { showError } from "../../../shared/utils/toast.js";
 
 export const useAuthStore = create(
     persist(
         (set, get) => ({
             user: null,
-            token : null,
-            resfresToken: null,
+            token: null,
+            refreshToken: null,
             expiresAt: null,
             loading: false,
             error: null,
-            iisLoadingAuth: true,
+            isLoadingAuth: true,
             isAuthenticated: false,
-            //Verficar si hay sesion activa
-            checkAuth: async () => {
+            //Verificar si hay sesión activa pero no es Admin, se limpia la sesión
+            checkAuth: () => {
                 const token = get().token;
                 const role = get().user?.role;
                 const isAdmin = role === "ADMIN_ROLE";
-                if(token && !isAdmin) {
+                if (token && !isAdmin){
                     set({
                         user: null,
                         token: null,
-                        resfresToken: null,
+                        refreshToken: null,
                         expiresAt: null,
                         isAuthenticated: false,
-                        iisLoadingAuth: false,
-                        error: "No tienes permisos para acceder a esta aplicación"
+                        isLoadingAuth: false,
+                        error: "Notienes permisos para acceder a esta aplicación"
                     })
-                    return;
+                    return
                 }
                 set({
-                    iisLoadingAuth: false,
+                    isLoadingAuth: false,
                     isAuthenticated: Boolean(token) && isAdmin
                 })
             },
@@ -41,45 +41,48 @@ export const useAuthStore = create(
                 set({
                     user: null,
                     token: null,
-                    resfresToken: null,
+                    refreshToken: null,
                     expiresAt: null,
-                    isAuthenticated: false
+                    isAuthenticated: false,
                 })
             },
 
             login: async ({emailOrUsername, password}) => {
                 try{
                     set({loading: true, error: null})
-                    const {data} = await loginResquest({emailOrUsername, password})
-                    const role = data?.userDetails?.user?.role;
+                    const { data } = await loginRequest({emailOrUsername, password})
+                    const role = data?.userDetails?.role;
+                    console.log(role);
                     if(role !== "ADMIN_ROLE"){
                         const message = "No tienes permisos para acceder a esta aplicación";
                         set({
                             user: null,
                             token: null,
-                            resfresToken: null,
+                            refreshToken: null,
                             expiresAt: null,
                             isAuthenticated: false,
-                            iisLoadingAuth: false,
-                            error: "No tienes permisos para acceder a esta aplicación"
+                            isLoadingAuth: false,
+                            error: message
                         })
                         showError(message)
-                        return { succes: false, error: message}
+                        return { success: false, error: message}
                     }
+
                     set({
                         user: data.userDetails,
                         token: data.accessToken,
-                        resfresToken: data.resfresToken,
-                        expiresAt: data.expiresAt,
-                        isAuthenticated: false,
-                        loading: true,
+                        refreshToken: data.refreshToken,
+                        expiresAt: data.expiresIn,
+                        isAuthenticated: true,
+                        loading: false,
                     })
+                    return { success: true }
                 }catch(err){
-                    const message = err.response?.data?.meassage || "Error al iniciar sesión";
+                    const message = err.response?.data?.message || "Error al iniciar sesión"
                     set({error: message, loading: false})
-                    return {succes: false, error: message}
+                    return {success: false, error: message}
                 }
-            }
+            } 
         }),
         {name: "auth-KS-IN6AV"},
     )
