@@ -1,4 +1,5 @@
-import axios from '../utils/axios.js'
+import axios from '../utils/axios.js';
+import { useAuthStore } from '../../features/auth/store/authStore.js';
 
 //Configuracion de Axios para cada servidor
 const axiosAuth = axios.create({
@@ -15,6 +16,16 @@ const axiosAdmin = axios.create({
     headers: {
         'Content-Type': 'application/jason'
     }
+})
+
+//Configuracion de interceptores para manejar tokens y headers
+axiosAdmin.interceptors.request.use((config) => {
+    config._axiosClient = "admin";
+    const token = useAuthStore.getState().token;
+    if(token){
+        config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
 })
 
 export { axiosAuth, axiosAdmin }

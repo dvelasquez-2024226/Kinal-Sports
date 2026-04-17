@@ -1,5 +1,5 @@
 import { useAuthStore } from "../../features/auth/store/authStore"
-import { DashboardContainer } from "../../shared/layout/DashboardContainer"
+import { DashboardContainer } from "../../shared/components/layout/DashboardContainer"
 import { Outlet } from "react-router-dom"
 
 export const DashboardPage = () => {
