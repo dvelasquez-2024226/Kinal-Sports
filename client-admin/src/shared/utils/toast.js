@@ -9,7 +9,7 @@ const baseStyle = {
     boxShadow: "0 2px 16px 0 rgb(0,0,0,0.8)"
 }
 
-export const shosSuccess = (message) => {
+export const showSuccess = (message) => {
     toast.success(message, {
         style: {
             ...baseStyle,

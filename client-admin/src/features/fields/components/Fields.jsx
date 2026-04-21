@@ -1,28 +1,28 @@
 import { useEffect, useState } from "react";
 import { useFieldsStore } from "../../users/store/adminStore";
 import { Spinner } from "../../auth/components/Spinner.jsx";
-// import { FieldModal } from "./FieldModal.jsx";
+import { FieldModal } from "./FieldModal.jsx";
 //import { useUIStore } from "../../auth/store/uiStore.js";
 import { useEffect as useToastEffect } from "react";
 import { showError } from "../../../shared/utils/toast.js";
- 
+
 export const Fields = () => {
-  const { fields, loading, error, getFields, deleteField } = useFieldsStore();
-  //const [openModal, setOpenModal] = useState(false);
+  const { fields, loading, error, getFields } = useFieldsStore();
+  const [openModal, setOpenModal] = useState(false);
   //const [selectedField, setSelectedField] = useState(null);
   //const { openConfirm } = useUIStore();
- 
+
   useEffect(() => {
     getFields();
   }, [getFields]);
- 
+
   // Mostrar toast de error si existe
   useToastEffect(() => {
     if (error) showError(error);
   }, [error]);
- 
+
   if (loading) return <Spinner />;
- 
+
   return (
     <div className="p-4">
       {/* HEADER */}
@@ -35,19 +35,18 @@ export const Fields = () => {
             Administra las canchas registradas
           </p>
         </div>
-        {/*
+    
         <button
           className="bg-main-blue px-4 py-2 rounded text-white hover:opacity-90 transition"
           onClick={() => {
-            setSelectedField(null);
+            //setSelectedField(null);
             setOpenModal(true);
           }}
         >
           + Agregar Campo
         </button>
-        */}
       </div>
- 
+
       {/* GRID RESPONSIVE */}
       <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         {fields.map((field) => (
@@ -63,32 +62,32 @@ export const Fields = () => {
                 className="max-h-full max-w-full object-contain rounded-t-xl"
               />
             </div>
- 
+
             {/* CONTENIDO */}
             <div className="p-5">
               <h2 className="text-xl font-bold text-main-blue">
                 {field.fieldName}
               </h2>
- 
+
               {/* BADGES */}
               <div className="flex gap-2 mt-2 flex-wrap">
                 <span className="px-3 py-1 text-xs rounded-full bg-blue-100 text-blue-700 font-medium">
                   {field.capacity.replace("_", " ")}
                 </span>
- 
+
                 <span className="px-3 py-1 text-xs rounded-full bg-green-100 text-green-700 font-medium">
                   Q{field.pricePerHour}/hora
                 </span>
               </div>
- 
+
               {/* INFO */}
               <p className="text-sm text-gray-400 mt-2 truncate">
                 ID: {field._id}
               </p>
- 
+
               {/* BOTONES */}
               <div className="flex gap-3 mt-5">
-                {/*
+                {/*}
                 <button
                   className="flex-1 py-2 rounded-lg bg-main-blue text-white font-medium hover:opacity-90 transition"
                   onClick={() => {
@@ -98,8 +97,7 @@ export const Fields = () => {
                 >
                   Editar
                 </button>
-                
- 
+                  
                 <button
                   className="flex-1 py-2 rounded-lg bg-red-600 text-white font-medium hover:bg-red-700 transition"
                   onClick={() =>
@@ -118,16 +116,15 @@ export const Fields = () => {
           </div>
         ))}
       </div>
-      {/*
+
       <FieldModal
         isOpen={openModal}
         onClose={() => {
           setOpenModal(false);
-          setSelectedField(null);
+          //setSelectedField(null);
         }}
-        field={selectedField}
+        //field={selectedField}
       />
-      */}
     </div>
   );
 };
