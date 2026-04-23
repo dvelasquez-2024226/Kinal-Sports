@@ -70,7 +70,7 @@ export const useAuthStore = create(
 
                     set({
                         user: data.userDetails,
-                        token: data.accessToken,
+                        token: data.token,
                         refreshToken: data.refreshToken,
                         expiresAt: data.expiresIn,
                         isAuthenticated: true,

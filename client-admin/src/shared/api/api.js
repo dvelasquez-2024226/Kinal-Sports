@@ -1,31 +1,32 @@
-import axios from '../utils/axios.js';
-import { useAuthStore } from '../../features/auth/store/authStore.js';
+import axios from '../utils/axios.js'
+import { useAuthStore } from '../../features/auth/store/authStore.js'
 
-//Configuracion de Axios para cada servidor
-const axiosAuth = axios.create({
+// Configuaración de Axios para cada servidor (admin y auth)
+const axiosAuth =  axios.create({
     baseURL: import.meta.env.VITE_AUTH_URL,
     timeout: 5000,
-    headers: {
+    headers:{
         'Content-Type': 'application/json'
     }
 })
 
-const axiosAdmin = axios.create({
+const axiosAdmin =  axios.create({
     baseURL: import.meta.env.VITE_ADMIN_URL,
     timeout: 5000,
-    headers: {
-        'Content-Type': 'application/jason'
+    headers:{
+        'Content-Type': 'application/json'
     }
 })
 
-//Configuracion de interceptores para manejar tokens y headers
+// Configuración de interceptores para manejar token y headers
+
 axiosAdmin.interceptors.request.use((config) => {
-    config._axiosClient = "admin";
+    config._axiosClient = 'admin';
     const token = useAuthStore.getState().token;
-    if(token){
-        config.headers.Authorization = `Bearer ${token}`;
+    if (token){
+        config.headers.Authorization = `Bearer ${token}`
     }
     return config;
 })
 
-export { axiosAuth, axiosAdmin }
+export {axiosAdmin, axiosAuth}

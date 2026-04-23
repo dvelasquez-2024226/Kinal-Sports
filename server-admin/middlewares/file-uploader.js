@@ -34,7 +34,6 @@ const createCloudinaryUploader = (folder) => {
       return {
         folder: folder,
         public_id: publicId,
-        allowedFormats: ["jpg", "jpeg", "png", "webp"],
         transformation: [{ width: 1000, height: 1000, crop: "limit" }],
         resource_type: "image",
       };
@@ -57,11 +56,11 @@ const createCloudinaryUploader = (folder) => {
 };
 
 export const uploadFieldImage = createCloudinaryUploader(
-  "kinal_sports_in6av/fields",
+  "kinal_sports_in6am/fields",
 );
 
 export const uploadTeamImage = createCloudinaryUploader(
-  "kinal_sports_in6av/teams",
+  "kinal_sports_in6am/teams",
 );
 
 export { cloudinary };

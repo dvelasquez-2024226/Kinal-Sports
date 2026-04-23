@@ -2,6 +2,7 @@ import { AppRouter } from "./router/AppRouter"
 import { useEffect } from "react"
 import { Toaster } from "react-hot-toast"
 import { useAuthStore } from "../features/auth/store/authStore"
+import { UiConfirmHost } from "../features/auth/components/ConfirmModal.jsx"
 import { use } from "react"
 
 export const App = () => {
@@ -22,6 +23,7 @@ export const App = () => {
         },
       }}
     />
+    <UiConfirmHost />
     <AppRouter />
     </>
   )

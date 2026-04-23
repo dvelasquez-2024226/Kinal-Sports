@@ -1,9 +1,9 @@
 'use strict';
- 
+
 /**
-* Middleware para validar que el usuario tenga un rol específico
-* Debe ejecutarse después de validateJWT
-*/
+ * Middleware para validar que el usuario tenga un rol específico
+ * Debe ejecutarse después de validateJWT
+ */
 export const requireRole = (...allowedRoles) => {
   return (req, res, next) => {
     if (!req.user) {
@@ -13,9 +13,9 @@ export const requireRole = (...allowedRoles) => {
         error: 'UNAUTHORIZED',
       });
     }
- 
+
     const userRole = req.user.role;
- 
+
     if (!allowedRoles.includes(userRole)) {
       return res.status(403).json({
         success: false,
@@ -25,7 +25,7 @@ export const requireRole = (...allowedRoles) => {
         yourRole: userRole,
       });
     }
- 
+
     next();
   };
 };

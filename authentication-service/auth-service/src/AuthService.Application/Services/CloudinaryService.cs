@@ -3,18 +3,18 @@ using AuthService.Application.Interfaces;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using Microsoft.Extensions.Configuration;
-using Org.BouncyCastle.Math.EC;
-
+ 
+ 
 namespace AuthService.Application.Services;
-
+ 
 public class CloudinaryService(IConfiguration configuration) : ICloudinaryService
 {
     private readonly Cloudinary _cloudinary = new(new Account(
-        configuration["CloudinarySettings:CloudName"],
+        configuration["CloudinarySettings:Cloudname"],
         configuration["CloudinarySettings:ApiKey"],
         configuration["CloudinarySettings:ApiSecret"]
     ));
-
+ 
     public async Task<bool> DeleteImageAsync(string publicId)
     {
         try
@@ -23,39 +23,41 @@ public class CloudinaryService(IConfiguration configuration) : ICloudinaryServic
             {
                 PublicIds = [publicId]
             };
-            var  result = await _cloudinary.DeleteResourcesAsync(deleteParams);
+            var result = await _cloudinary.DeleteResourcesAsync(deleteParams);
             return result.Deleted?.ContainsKey(publicId) == true;
-        }catch
+        }
+        catch
         {
             return false;
         }
     }
-
+ 
     public string GetDefaultAvatarUrl()
     {
-        var defautlPath = configuration["CloudinarySettings:DefaultAvatarPath"] ?? "avatarDefault-1749508519496.png";
-        if (defautlPath.Contains('/')) return defautlPath.Split('/').Last();
-        return defautlPath;
-     }
-
+        var defaultPath = configuration["CloudinarySettings:DefaultAvatarPath"] ?? "avatarDefault-1749508519496.png";
+        if (defaultPath.Contains('/')) return defaultPath.Split('/').Last();
+        return defaultPath;
+    }
+ 
     public string GetFullImageUrl(string imagePath)
     {
-        var baseUrl = configuration["CloudinarySettings:BaseUrl"] ?? "https://res.cloudinary.com/dmzpqylve/image/upload/v1769726003";
+        var baseUrl = configuration["CloudinarySettings:BaseUrl"] ?? "https://res.cloudinary.com/dug3apxt3/image/upload/v1769725996/";
         var folder = configuration["CloudinarySettings:Folder"] ?? "auth_ks_in6av/profiles";
-        var defautlPath = configuration["CloudinarySettings:DefaultAvatarPath"] ?? "avatarDefault-1749508519496.png";
-        var pathToUse = string.IsNullOrEmpty(imagePath) ? defautlPath : imagePath;
-        if (!pathToUse.Contains('/')) pathToUse = $"{folder}/{pathToUse}";
-
-        return $"{baseUrl}{pathToUse}";
+        var defaultPath = configuration["CloudinarySettings:DefaultAvatarPath"] ?? "avatarDefault-1749508519496.png";
+ 
+        var pathToUse = string.IsNullOrEmpty(imagePath) ? defaultPath : imagePath;
+        if(!pathToUse.Contains('/')) pathToUse = $"{folder}/{pathToUse}";
+ 
+        return $"{baseUrl}{pathToUse}";    
     }
-
+ 
     public async Task<string> UploadImageAsync(IFileData imageFile, string fileName)
     {
         try
         {
-            using var stream =  new MemoryStream(imageFile.Data);
+            using var stream = new MemoryStream(imageFile.Data);
             var folder = configuration["CloudinarySettings:Folder"] ?? "auth_ks_in6av/profiles";
-
+ 
             var uploadParams = new ImageUploadParams
             {
                 File = new FileDescription(imageFile.FileName, stream),
@@ -70,17 +72,17 @@ public class CloudinaryService(IConfiguration configuration) : ICloudinaryServic
                     .FetchFormat("auto")
             };
             var uploadResult = await _cloudinary.UploadAsync(uploadParams);
-
+ 
             if(uploadResult.Error != null)
             {
                 throw new InvalidOperationException($"Error al subir la imagen: {uploadResult.Error.Message}");
             }
-
+ 
             return fileName;
         }
         catch (Exception ex)
-        {   
-            throw new InvalidOperationException($"Error al subir la imagen a Cloudinary: {ex.Message}",ex);
+        {
+            throw new InvalidOperationException($"Error al subir la imagen a Cloudinary: {ex.Message}", ex);
         }
     }
 }

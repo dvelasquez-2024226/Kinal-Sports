@@ -1,22 +1,27 @@
 import { useFieldsStore } from "../../users/store/adminStore";
 
-export const useSaveField = () => {
+export const useSaveField = () =>{
     const createField = useFieldsStore((state) => state.createField);
+    const updateField = useFieldsStore((state) => state.updateField)
 
-    const saveField = async (data) =>{
-        const fromData = new FromData();
+    const saveField = async (data, fieldId = null) =>{
+        const formData = new FormData();
 
-        fromData.append("fieldName", data.fieldName);
-        fromData.append("fieldType", data.fieldType);
-        fromData.append("capacity", data.capacity);
-        fromData.append("pricePerHour", data.pricePerHour);
-        fromData.append("description", data.description);
+        formData.append("fieldName", data.fieldName);
+        formData.append("fieldType", data.fieldType);
+        formData.append("capacity", data.capacity);
+        formData.append("pricePerHour", data.pricePerHour);
+        formData.append("description", data.description);
 
         if(data.photo?.length > 0){
-            fromData.append("image", data.photo[0]);
+            formData.append("image", data.photo[0]);
         }
 
-        await createField(fromData);
+        if (fieldId){
+            await updateField(fieldId, formData);
+        }else{
+            await createField(formData);
+        }
     }
 
     return { saveField }

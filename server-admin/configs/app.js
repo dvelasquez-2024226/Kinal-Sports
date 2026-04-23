@@ -1,61 +1,61 @@
-'use strict'
+'use strict';
 
-import express, { application } from 'express';
+import express from 'express';
 import cors from 'cors';
-import morgan from 'morgan';
 import helmet from 'helmet';
-import { dbConnection } from './db.js';
+import morgan from 'morgan';
 import { corsOptions } from './cors.configuration.js';
-import { helmetOptions } from './helmet.configuration.js'
+import { helmetOptions } from './helmet.configuration.js';
+import { dbConnection } from './db.js';
 import { requestLimit } from './rateLimit.configuration.js';
 import { errorHandler } from '../middlewares/handle-errors.js';
 import fieldRoutes from '../src/fields/field.routes.js';
 
 const BASE_PATH = '/kinalSports/v1';
 
-const middlewares = (app) =>{
-    app.use(express.urlencoded({extended: false, limit: '10mb'}));
-    app.use(express.json({limit: '10mb'}));
-    app.use(cors(corsOptions));
-    app.use(morgan('dev'));
-    app.use(helmet(helmetOptions));
-    app.use(requestLimit);
-};
-
 const routes = (app) => {
     app.use(`${BASE_PATH}/fields`, fieldRoutes);
-    app.get(`${BASE_PATH}/health`, (req, res) => {
+    app.get(`${BASE_PATH}/health`, (req, res) =>{
         res.status(200).json({
-            status: 'healthy',
+            status: 'Healthy',
+            timeStamp: new Date().toISOString(),
             service: 'Kinal Sports Admin Server'
         })
     })
 
-    app.use((req, res) => {
+    app.use((req, res) =>{
         res.status(404).json({
-            succes: false,
-            message: 'Ruta no existe en el servidor'
+            success: false,
+            message: 'Endpoint no encontrado'
         })
     })
 }
 
-export const initServer = async() => {
-    const app =  express();
+const middlewares = (app) => {
+    app.use(express.json({limit: '10mb'}));
+    app.use(express.urlencoded({extended: false, limit: '10mb'}));
+    app.use(cors(corsOptions));
+    app.use(helmet(helmetOptions));
+    app.use(morgan('dev'));
+    app.use(requestLimit);
+}
+
+export const initServer = async () => {
+    const app = express();
     const PORT = process.env.PORT;
-    app.set('trust proxy', 1);
+    app.set('trust proxy', 1)
 
     try{
-        await dbConnection();
         middlewares(app);
+        await dbConnection();
         routes(app);
         app.use(errorHandler);
-
         app.listen(PORT, () => {
-            console.log(`Kinal Sports admin server running on port ${PORT}`)
-            console.log(`Health check endpoint: http://localhost:${PORT}${BASE_PATH}/health`)
-        })
+            console.log(`Server Kinal Sports Admin running on port: ${PORT}`);
+            console.log(`Health check endpoint: http://localhost:${PORT}${BASE_PATH}/health`);
+        });
     }catch(err){
-        console.error(`Error al inicia el servidor: ${err.message}`);
+        console.error(`Kinal Sports - Error al iniciar el servidor: ${err.message}`);
         process.exit(1);
     }
 }

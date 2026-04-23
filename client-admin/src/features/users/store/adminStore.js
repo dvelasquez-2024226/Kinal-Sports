@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { 
-    createField as createFieldRequest, getFields as getFieldsRequest 
+    createField as createFieldRequest, getFields as getFieldsRequest, updateField as updateFieldRequest, deleteField as deleteFieldRequest
 } from "../../../shared/api"
 
 export const useFieldsStore = create((set, get) => ({
@@ -12,7 +12,7 @@ export const useFieldsStore = create((set, get) => ({
         try{
             set({loading: true, error: null})
             const response = await getFieldsRequest();
-
+            console.log(response.data.data)
             set({fields: response.data.data, loading: false })
         }catch (err){
             set({
@@ -22,10 +22,10 @@ export const useFieldsStore = create((set, get) => ({
         }
     },
 
-    createField: async (fromData) => {
+    createField: async (formData) => {
         try{
             set({loading: true, error: null});
-            const response = await createFieldRequest(fromData);
+            const response = await createFieldRequest(formData);
 
             set({
                 fields: [response.data.data, ...get().fields],
@@ -33,7 +33,44 @@ export const useFieldsStore = create((set, get) => ({
             })
         }catch(err){
             set({
-                error: err.response?.data?.message || "Error al crear las cancha",
+                error: err.response?.data?.message || "Error al crear la cancha",
+                loading: false
+            })
+        }
+    },
+
+    updateField: async (id, formData) => {
+        try{
+            set({loading: true, error: null});
+            
+            const response = await updateFieldRequest(id, formData);
+            set ({
+                fields: get().fields.map((field) => 
+                    field._id === id ? response.data.data : field
+                ),
+                loading: false
+            })
+        }catch(err){
+            console.log(err)
+            set({
+                error: err.response?.data?.message || "Error al actualizar la cancha",
+                loading: false
+            })
+        }
+    },
+
+    deleteField: async (id) => {
+        try{
+            set ({loading: true, error: null});
+
+            await deleteFieldRequest(id);
+            set ({
+                fields: get().fields.filter((field) => field._id !== id),
+                loading: false
+            })
+        }catch(err){
+            set({
+                error: err.response?.data?.message || "Error al eliminar la cancha",
                 loading: false
             })
         }
