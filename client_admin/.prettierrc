@@ -1,0 +1,10 @@
+{
+  "semi": true,
+  "singleQoute": true,
+  "jsxSingleQpute": true,
+  "trailingComma": "es5",
+  "printWidth": 100,
+  "tablWidth": 2,
+  "bracketSpacing": true,
+  "arrowParens": "always"
+}

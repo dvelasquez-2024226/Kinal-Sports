@@ -10,17 +10,19 @@ using AuthService.Domain.Enums;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using AuthService.Application.DTOs.Email;
+using System.Security.Cryptography.X509Certificates;
 
 namespace AuthService.Application.Services;
 
 public class AuthService(
+        IRefreshTokenService refreshTokenService,
     IUserRepository userRepository,
     IRoleRepository roleRepository,
     IPasswordHashService passwordHashService,
     IJwtTokenService jwtTokenService,
     ICloudinaryService cloudinaryService,
     IEmailService emailService,
-    IConfiguration configuration,
+    // IConfiguration configuration, // Removed unused parameter
     ILogger<AuthService> logger) : IAuthService
 {
     private readonly ICloudinaryService _cloudinaryService = cloudinaryService;
@@ -75,7 +77,6 @@ public class AuthService(
         var userProfileId = UuidGenerator.GenerateUserId();
         var userEmailId = UuidGenerator.GenerateUserId();
         var userRoleId = UuidGenerator.GenerateUserId();
-        var UserPasswordResetId = UuidGenerator.GenerateUserId();
 
         // Obtener el rol por defecto (USER_ROLE) ya seedado en DB
         var defaultRole = await roleRepository.GetByNameAsync(RoleConstants.USER_ROLE);
@@ -117,17 +118,17 @@ public class AuthService(
                     RoleId = defaultRole.Id
                 }
             ],
-            UserPasswordReset = new UserPasswordReset
+            UserPasswordReset = new UserPasswordReset //Generar el objeto.
             {
-                Id = UserPasswordResetId,
+                Id = UuidGenerator.GenerateUserId(),
                 UserId = userId,
                 PasswordResetToken = null,
                 PasswordResetTokenExpiry = null
-            }
+            },
         };
 
         // Guardar usuario y entidades relacionadas
-        var createdUser = await userRepository.CreateUserAsync(user);
+        var createdUser = await userRepository.CreateAsync(user);
 
         logger.LogUserRegistered(createdUser.Username);
 
@@ -194,18 +195,18 @@ public class AuthService(
 
         logger.LogUserLoggedIn();
 
-        // Generar token JWT
-        var token = jwtTokenService.GenerateToken(user);
-        var expiryMinutes = int.Parse(configuration["JwtSettings:ExpiryInMinutes"] ?? "30");
+        // Generar accessToken (15 min) y refreshToken (30 días)
+        var accessToken = await jwtTokenService.GenerateTokenAsync(user.Id, expiresInMinutes: 15);
+        var (refreshToken, _) = await refreshTokenService.CreateAsync(user.Id);
 
-        // Crear respuesta compacta
         return new AuthResponseDto
         {
             Success = true,
             Message = "Login exitoso",
-            Token = token,
-            UserDetails = MapToUserDetailsDto(user),
-            ExpiresAt = DateTime.UtcNow.AddMinutes(expiryMinutes)
+            AccessToken = accessToken,
+            RefreshToken = refreshToken,
+            ExpiresIn = 900,
+            UserDetails = MapToUserDetailsDto(user)
         };
     }
 
@@ -257,7 +258,7 @@ public class AuthService(
         user.UserEmail.EmailVerificationToken = null;
         user.UserEmail.EmailVerificationTokenExpiry = null;
 
-        await userRepository.UpdateUserAsync(user);
+        await userRepository.UpdateAsync(user);
 
         // Enviar email de bienvenida
         try
@@ -311,7 +312,7 @@ public class AuthService(
         user.UserEmail.EmailVerificationToken = newToken;
         user.UserEmail.EmailVerificationTokenExpiry = DateTime.UtcNow.AddHours(24);
 
-        await userRepository.UpdateUserAsync(user);
+        await userRepository.UpdateAsync(user);
 
         // Enviar email
         try
@@ -368,7 +369,7 @@ public class AuthService(
             user.UserPasswordReset.PasswordResetTokenExpiry = DateTime.UtcNow.AddHours(1); // 1 hora para resetear
         }
 
-        await userRepository.UpdateUserAsync(user);
+        await userRepository.UpdateAsync(user);
 
         // Enviar email
         try
@@ -407,7 +408,7 @@ public class AuthService(
         user.UserPasswordReset.PasswordResetToken = null;
         user.UserPasswordReset.PasswordResetTokenExpiry = null;
 
-        await userRepository.UpdateUserAsync(user);
+        await userRepository.UpdateAsync(user);
 
         logger.LogInformation("Password reset successfully for user {Username}", user.Username);
 
@@ -429,5 +430,10 @@ public class AuthService(
 
         return MapToUserResponseDto(user);
     }
-}
 
+    public async Task<IEnumerable<UserResponseDto>> GetAllUsersAsync()
+    {
+        var users = await userRepository.GetUsersAsync();
+        return users.Select(MapToUserResponseDto);
+    }
+}
