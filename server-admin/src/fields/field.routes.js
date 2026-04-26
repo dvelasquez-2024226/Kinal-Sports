@@ -11,7 +11,7 @@ import {
   validateUpdateFieldRequest,
   validateFieldStatusChange,
   validateGetFieldById,
-} from '../../middlewares/field-validators.js';
+} from '../../middlewares/field-validator.js';
 import { uploadFieldImage } from '../../middlewares/file-uploader.js';
 import { cleanupUploadedFileOnFinish } from '../../middlewares/delete-file-on-error.js';
 

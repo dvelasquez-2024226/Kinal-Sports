@@ -6,15 +6,21 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import { corsOptions } from './cors.configuration.js';
 import { helmetOptions } from './helmet.configuration.js';
-import { dbConnection } from './db.js';
+import { dbConnection } from './db.configuration.js';
 import { requestLimit } from './rateLimit.configuration.js';
 import { errorHandler } from '../middlewares/handle-errors.js';
 import fieldRoutes from '../src/fields/field.routes.js';
+import reservationRoutes from '../src/reservations/reservation.routes.js';
+import teamRoutes from '../src/teams/team.routes.js';
+import tournamentRoutes from '../src/tournaments/tournaments.routes.js';
 
 const BASE_PATH = '/kinalSports/v1';
 
 const routes = (app) => {
     app.use(`${BASE_PATH}/fields`, fieldRoutes);
+    app.use(`${BASE_PATH}/reservations`, reservationRoutes);
+    app.use(`${BASE_PATH}/teams`, teamRoutes);
+    app.use(`${BASE_PATH}/tournaments`, tournamentRoutes);
     app.get(`${BASE_PATH}/health`, (req, res) =>{
         res.status(200).json({
             status: 'Healthy',

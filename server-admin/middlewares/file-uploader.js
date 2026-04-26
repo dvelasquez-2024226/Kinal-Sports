@@ -34,6 +34,7 @@ const createCloudinaryUploader = (folder) => {
       return {
         folder: folder,
         public_id: publicId,
+        allowedFormats: ["jpg", "jpeg", "png", "webp"],
         transformation: [{ width: 1000, height: 1000, crop: "limit" }],
         resource_type: "image",
       };

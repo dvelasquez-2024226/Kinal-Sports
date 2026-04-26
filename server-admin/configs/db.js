@@ -34,7 +34,7 @@ export const dbConnection = async () => {
       maxPoolSize: 10,
     });
   } catch (error) {
-    console.log(`Error al conectar la db: ${error}`);
+    console.error(`Error al conectar la db: ${error}`);
     process.exit(1);
   }
 };
