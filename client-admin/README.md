@@ -50,7 +50,7 @@ cp .env.example .env
 
 ```env
 VITE_AUTH_URL=http://localhost:5156/api/v1
-VITE_ADMIN_URL=http://localhost:3009/kinalSportsAdmin/v1
+VITE_ADMIN_URL=http://localhost:3020/kinalSportsAdmin/v1
 VITE_CLOUDINARY_BASE_URL=https://res.cloudinary.com/dug3apxt3/image/upload/
 ```
 
