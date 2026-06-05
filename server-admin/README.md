@@ -251,10 +251,10 @@ Crear archivo `.env` en la raíz del proyecto:
 
 ```env
 # Servidor
-PORT=3000
+PORT=3009
 
 # Base de Datos
-MONGO_URI=mongodb://localhost:27017/kinal_sports_admin
+URI_MONGODB=mongodb://localhost:27018/kinalSports
 
 # JWT
 JWT_SECRET=tu-secreto-jwt-seguro-aqui
@@ -305,7 +305,7 @@ sudo systemctl start mongod
 pnpm run dev
 ```
 
-El servidor estará disponible en `http://localhost:3000` (o el puerto configurado)
+El servidor estará disponible en `http://localhost:3009` (o el puerto configurado)
 
 ### Scripts Disponibles
 

@@ -1,0 +1,17 @@
+**/node_modules
+**/.env
+**/.env.*
+!**/ .env.example
+**/.git
+**/.gitignore
+**/.README.md
+**/uploads
+**/bin
+**/obj
+server-admin
+server-user
+authentication-service
+client-admin/node_modules
+client-admin/dist
+*.md
+!dockerfiles/**
